@@ -4,20 +4,20 @@ public void setup()
   background(0);
 }
 
-int size=0;
+int w=0;
 public void draw()
 {
   background(0);
   noFill();
   stroke(#88CFF0);
   sierpinski(250-400/2, 300+400/4, 400);
-  if (mousePressed && size<=1500){
+  if (mousePressed && w<=1500){
     background(0);
-    size+=10;
-    sierpinski(mouseX-400/2, mouseY+400/4, size);
+    w+=10;
+    sierpinski(mouseX-400/2, mouseY+400/4, w);
   }
-  if (size>1500)
-    size=400;  
+  if (w>1500)
+    w=400;  
     
 }
 public void mouseDragged()//optional
