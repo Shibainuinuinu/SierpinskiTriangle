@@ -5,20 +5,27 @@ public void setup()
 }
 
 int w=0;
+int randoColor = color((int)(Math.random()*256), 
+                         (int)(Math.random()*256), 
+                         (int)(Math.random()*256));
 public void draw()
 {
   background(0);
   noFill();
-  stroke(#88CFF0);
+   stroke(randoColor);
   sierpinski(250-400/2, 300+400/4, 400);
   if (mousePressed && w<=1500){
     background(0);
-    w+=10;
+    w+=15;
+    stroke(randoColor);
     sierpinski(mouseX-400/2, mouseY+400/4, w);
   }
-  if (w>1500)
-    w=400;  
-    
+  if (w>1500){
+   w=400;  
+   randoColor = color((int)(Math.random()*256), 
+                         (int)(Math.random()*256), 
+                         (int)(Math.random()*256));
+  }   
 }
 public void mouseDragged()//optional
 {
